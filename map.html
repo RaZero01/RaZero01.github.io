@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карта</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/body.css">
+<link rel="stylesheet" type="text/css" href="../css/mdb.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link fade" href="index.html">Главная страница <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fade active" href="search.html">Поисковик</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fade" href="map.html">Карта</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fade" href="advert.html">Реклама</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fade" href="user.html">Авторизация</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+</header>
+
+<body bgcolor="#FFFFFF" text="black" link="#OOFFOO" alink="#OOFFOO" vlink="blue">
+<style type="text/css">
+    #gazprom
+    { position: absolute; left: 160px; top: 250px; visibility: hidden; }
+    #lukoil
+    { position: absolute; left: 160px; top: 250px; visibility: hidden; }
+    #rsu
+    { position: absolute; left: 160px; top: 250px; visibility: hidden; }
+    #mgimo
+    { position: absolute; left: 160px; top: 250px; visibility: hidden; }
+
+</style>
+<div id='gazprom'>Газпром</div>
+<div id='lukoil'>Лукойл</div>
+<div id='rsu'>Российский Технологический Университет</div>
+<div id='mgimo'>МГИМО</div>
+<br>
+<img class="text-center w-responsive mx-auto mb-5 img-thumbnail z-depth-4" style="margin-left: auto; margin-right: auto; display: block" src="../images/map.png"  usemap="#russia">
+<map name="russia">
+    <area shape="rect" coords="20,70,175,85" href="http://www.gazprom-neft.ru/"
+          onMouseOver="showLayer('gazprom');"onMouseOut="hideLayer('gazprom');">
+    <area shape="rect" coords="278,207,353,227" href="http://www.lukoil.ru/"
+          onMouseOver="showLayer('lukoil');" onMouseOut="hideLayer('lukoil');">
+    <area shape="rect" coords="515,380,560,401" href="http://www.mirea.ru/"
+          onMouseOver="showLayer('rsu');" onMouseOut="hideLayer('rsu');">
+    <area shape="rect" coords="605,600,710,621" href="http://www.mirea.ru/"
+          onMouseOver="showLayer('rsu');" onMouseOut="hideLayer('rsu');">
+    <area shape="rect" coords="763,232,845,252" href="http://www.mgimo.ru/"
+          onMouseOver="showLayer('mgimo');" onMouseOut="hideLayer('mgimo');">
+    <area shape="rect" coords="289,89,368,105" href="link4.html"
+          onMouseOver="showLayer('link4');" onMouseOut="hideLayer('link4');">
+</map>
+</body>
+</html>

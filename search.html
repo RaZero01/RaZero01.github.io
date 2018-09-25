@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Поисковая страница</title>
+</head>
+<body>
+
+
+<script src="../js/FindText.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/body.css">
+<link rel="stylesheet" type="text/css" href="../css/mdb.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link fade" href="index.html">Главная страница <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fade active" href="search.html">Поисковик</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fade" href="map.html">Карта</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fade" href="advert.html">Реклама</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fade" href="user.html">Авторизация</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+</header>
+<br>
+<form name="find" style="text-align: center">
+    <input type="text" name="searchtext" style="width: 80%; height: 30px; font-size: 1.8rem; text-align: center" placeholder="Что Вы хотите найти?"><br>
+    <input type="checkbox" name="newwin"> Открыть в новом окне<br>
+    <br>С помощью поисковой системы:<br >
+    <input type="button" class="btn btn-outline-dark" value="Yandex"
+           onClick="FindText(UrlYandex)">
+    <input type="button" class="btn btn-outline-dark" value="Google"
+           onClick="FindText(UrlGoogle)">
+    <input type="button" class="btn btn-outline-dark" value="Mail_ru"
+           onClick="FindText(UrlMailRu)">
+    <input type="button" class="btn btn-outline-dark" value="Rambler"
+           onClick="FindText(UrlRambler)"> <br><br>
+    <input type="button" class="btn btn-outline-dark" value="Aport"
+           onClick="FindText(UrlAport)">
+    <input type="button" class="btn btn-outline-dark" value="Ask"
+           onClick="FindText(UrlAsk)">
+    <input type="button" class="btn btn-outline-dark" value="Bing"
+           onClick="FindText(UrlBing)">
+    <input type="button" class="btn btn-outline-dark" value="Clarivate"
+           onClick="FindText(UrlClarivate)"> <br><br>
+    <input type="button" class="btn btn-outline-dark" value="DuckDuckDo"
+           onClick="FindText(UrlDuckDuckGo)">
+    <input type="button" class="btn btn-outline-dark" value="Из рук в руки"
+           onClick="FindText(UrlIRR)">
+    <input type="button" class="btn btn-outline-dark" value="Price"
+           onClick="FindText(UrlPrice)">
+    <input type="button" class="btn btn-outline-dark" value="Search"
+           onClick="FindText(UrlSearch)"><br><br>
+    <input type="button" class="btn btn-outline-dark" value="Webcrawler"
+           onClick="FindText(UrlWebcrawler)">
+    <input type="button" class="btn btn-outline-dark" value="Wikipedia"
+           onClick="FindText(UrlWikipedia)">
+    <input type="button" class="btn btn-outline-dark" value="Yahoo"
+           onClick="FindText(UrlYahoo)">
+</form>
+</body>
+</html>
