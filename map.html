@@ -5,10 +5,10 @@
     <title>Карта</title>
 </head>
 
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/body.css">
-<link rel="stylesheet" type="text/css" href="../css/mdb.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/body.css">
+<link rel="stylesheet" type="text/css" href="css/mdb.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <header>
 
@@ -61,20 +61,80 @@
 <div id='rsu'>Российский Технологический Университет</div>
 <div id='mgimo'>МГИМО</div>
 <br>
-<img class="text-center w-responsive mx-auto mb-5 img-thumbnail z-depth-4" style="margin-left: auto; margin-right: auto; display: block" src="../images/map.png"  usemap="#russia">
+<img class="text-center w-responsive mx-auto mb-5 img-thumbnail z-depth-4" style="margin-left: auto; margin-right: auto; display: block; filter: saturate(300%)" src="images/map.png"  usemap="#russia">
+
+<script>
+    function gazprom() {
+        document.getElementById("descr").innerHTML = "«Газпром нефть» — российская нефтяная компания. " +
+            "Основана в 1995 году указом Президента РФ Бориса Ельцина как «Сибирская нефтяная компания». " +
+            "В 2005 году контрольный пакет акций компании был приобретён «Газпромом», и в 2006 году «Сибнефть» была переименована в «Газпром нефть». " +
+            "Штаб-квартира компании находится в Санкт-Петербурге.";
+    }
+
+    function lukoil() {
+        document.getElementById("descr").innerHTML = "ПАО «ЛУКОЙЛ» — российская нефтяная компания. Официальное название — ПАО «Нефтяная компания „ЛУКОЙЛ“» " +
+            "Наименование компании происходит от первых букв названий городов нефтяников (Лангепас, Урай, Когалым) и слова «ойл». " +
+            "Основные виды деятельности компании — операции по разведке, добыче и переработке нефти и природного газа, реализации нефти и нефтепродуктов. " +
+            "Вторая после «Газпрома» по объёмам выручки компания в России (по итогам 2014 года, по данным журнала «Эксперт»). " +
+            "До 2007 являлась крупнейшей по объёму добычи нефтяной компанией в России («Роснефть» опередила её после покупки активов «ЮКОСа»). " +
+            "По размеру доказанных запасов углеводородов «Лукойл», по собственным данным, по состоянию на 1 января 2011 года являлся третьей в " +
+            "мире частной нефтяной компанией (по запасам нефти — первой)."
+    }
+
+    function mirea() {
+        document.getElementById("descr").innerHTML = "РТУ МИРЭА (полное название Федеральное государственное бюджетное образовательное учреждение " +
+            "высшего образования «МИРЭА — Российский технологический университет») — высшее учебное заведение в Москве, которое образовано в 2015 " +
+            "году в результате объединения МИРЭА, МГУПИ, МИТХТ имени М. В. Ломоносова и ряда образовательных, научных, конструкторских и производственных организаций."
+    }
+
+    function mgimo() {
+        document.getElementById("descr").innerHTML = "МГИМО (Московский государственный институт международных отношений) — один из ведущих российских вузов, " +
+            "готовящий специалистов по 18 направлениям: международные отношения, зарубежное регионоведение, экономика, юриспруденция, журналистика, политология, " +
+            "реклама и связи с общественностью, социология, менеджмент, торговое дело, экология и природопользование, государственное и муниципальное управление, " +
+            "финансы и кредит, лингвистика, педагогическое образование, психология, управление персоналом, бизнес-информатика."
+    }
+</script>
+
 <map name="russia">
-    <area shape="rect" coords="20,70,175,85" href="http://www.gazprom-neft.ru/"
-          onMouseOver="showLayer('gazprom');"onMouseOut="hideLayer('gazprom');">
-    <area shape="rect" coords="278,207,353,227" href="http://www.lukoil.ru/"
+    <area shape="rect" coords="20,70,175,85" onclick="gazprom()"
+          onMouseOver="showLayer('gazpromtext');"onMouseOut="hideLayer('gazprom');">
+    <area shape="rect" coords="278,207,353,227" onclick="lukoil()"
           onMouseOver="showLayer('lukoil');" onMouseOut="hideLayer('lukoil');">
-    <area shape="rect" coords="515,380,560,401" href="http://www.mirea.ru/"
+    <area shape="rect" coords="515,380,560,401" onclick="mirea()"
           onMouseOver="showLayer('rsu');" onMouseOut="hideLayer('rsu');">
-    <area shape="rect" coords="605,600,710,621" href="http://www.mirea.ru/"
+    <area shape="rect" coords="605,600,710,621" onclick="mirea()"
           onMouseOver="showLayer('rsu');" onMouseOut="hideLayer('rsu');">
-    <area shape="rect" coords="763,232,845,252" href="http://www.mgimo.ru/"
+    <area shape="rect" coords="763,232,845,252" onclick="mgimo()"
           onMouseOver="showLayer('mgimo');" onMouseOut="hideLayer('mgimo');">
-    <area shape="rect" coords="289,89,368,105" href="link4.html"
-          onMouseOver="showLayer('link4');" onMouseOut="hideLayer('link4');">
 </map>
+<p id="descr"></p>
+<br><br><br><br>
+<script>
+    function showhide() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+    #myDIV {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: lightblue;
+        margin-top: 20px;
+    }
+</style>
+
+<button onclick="showhide()">Показать/скрыть элемент</button>
+
+<div id="myDIV">
+    Текст в элементе
+</div>
+
 </body>
 </html>
