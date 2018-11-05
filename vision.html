@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+    <style>
+        li{
+            margin-bottom: 20px;
+        }
+        #chart_div{width: 800px; margin: 0 auto; text-align: left;}
+    </style>
+<title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="css/vision1.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="vision/vision.js"></script>
+
+</head>
+<script type="text/javascript">
+    function load(){
+        $('#opn-win').modal();
+    }
+</script>
+<body class="body">
+<ul class="menu-main">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="doctor.html">Добавить Врача</a></li>
+    <li><a href="vision.html">Отображение таблицы "Врачи"</a>
+    <li><a href="search.html">Поиск врачей</a>
+    <li><a onclick="load()" href="#">Аутентификация</a></li>
+
+</ul>
+<div class="title">
+    <div><span class="lab">
+            Таблица "Врачи"
+        </span></div>
+</div>
+<div class="divbutton">
+    <form action="php/backup.php" method="POST">
+        <input name="myActionName"
+                type="submit" value="Обновить данные" />
+    </form>
+    <form id="ajax_form" action="" method="post">
+        <input id="btntab"
+               type="button" value="Табличное представление"/>
+    </form>
+    <form action="" method="POST">
+        <input id="btnchart"
+               type="button" value="Графическое представление" />
+    </form>
+</div>
+
+<div id="result_form" style="text-align: center">
+
+</div>
+</body>
+</html>

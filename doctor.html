@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <style>li{
+        margin-bottom: 20px;
+    }</style>
+    <title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<script type="text/javascript">
+    function load(){
+        $('#opn-win').modal();
+    }
+</script>
+<body class="body">
+<ul class="menu-main">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="doctor.html">Добавить Врача</a></li>
+    <li><a href="vision.html">Отображение таблицы "Врачи"</a>
+    <li><a href="search.html">Поиск врачей</a>
+    <li><a onclick="load()" href="#">Аутентификация</a></li>
+
+</ul>
+<div class="title" >
+    <div class="form"><form action="php/add.php" method="post">
+        <div style="text-align: center"><span class="db"  >
+            Пожалуйста, заполните форму</span></div>
+        <div><span class="db">
+            ID:<input name="ID" placeholder="ID врача"><br>
+            </span></div>
+        <div><span class="db">
+            Фамилия:<input name="surname" placeholder="Разинков" type="text"><br>
+            </span></div>
+        <span class="db">
+            Имя:<input name="firstname" placeholder="Константин" type="text"><br>
+            </span>
+        <span class="db">
+            Отчество:<input name="patronomic" placeholder="Юрьевич" type="text"><br>
+            </span>
+        <span class="db">
+            Специализация:<input name="spec" placeholder="Терапевт" type="text"><br>
+            </span>
+        <span class="db">
+            Квалификация:<input name="skill" placeholder="Высшая" type="text"><br>
+            </span>
+        <span class="db">
+            Опыт работы:<input name="exp" placeholder="10" type="number"><br>
+            </span>
+        <span class="db">
+            Диплом:<input name="diploma" list="bool"><br>
+            <datalist id="bool">
+                <option value="+">
+                </option>
+                <option value="-"></option>
+            </datalist>
+            </span>
+        <span class="db">
+            Стажировка:<input name="empl" list="bool"><br>
+            </span>
+        <span class="db">
+            Заработная плата:<input name="salary" type="number"
+        min="0"><br>
+            </span>
+        <span class="db">
+            Количество детей:<input name="kids" type="number"
+                                    min="0"><br>
+            </span>
+        <span class="db">
+            Дата рождения:<input name="birth" type="date"
+        min="2018-21-03"><br>
+            </span>
+        <span class="db">
+            Адрес:<input name="address" type="text"><br>
+            </span>
+        <span class="db">
+            Часы работы:<input name="work_time" placeholder="9:00-12:00" type="text"><br>
+            </span>
+        <span class="db">
+            ID отделения:<input name="branch_ID" ><br>
+            </span>
+        <div style="text-align: center"><input type="submit" value="Добавить врача"></div>
+    </form></div></div>
+</body>
+</html>

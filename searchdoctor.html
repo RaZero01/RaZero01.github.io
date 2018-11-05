@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <style>
+        .suggestionsBox {
+            position: relative;
+            left: 30px;
+            margin: 10px 0px 0px 0px;
+            width: 200px;
+            background-color: white;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            border: 2px solid #000;
+            color: #fff;
+        }
+
+        .suggestionList {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .suggestionList li {
+            margin: 0px 0px 3px 0px;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+        .suggestionList li:hover {
+            background-color: red;
+        }
+        .info{
+            text-align: left;
+            padding-left: 42%;
+            font-style: italic;
+        }
+        .en{
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        #en{
+            font-weight: bold;
+            font-size: 40px;
+        }
+        li{
+             margin-bottom: 20px;
+         }
+    </style>
+    <title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <link href="css/vision1.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js"></script>
+    <script src="search/search.js"></script>
+
+</head>
+<script type="text/javascript">
+    function load(){
+        $('#opn-win').modal();
+    }
+</script>
+<body class="body">
+<ul class="menu-main">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="doctor.html">Добавить Врача</a></li>
+    <li><a href="vision.html">Отображение таблицы "Врачи"</a>
+    <li><a href="search.html">Поиск врачей</a>
+    <li><a onclick="load()" href="#">Аутентификация</a></li>
+
+</ul>
+<div class="title">
+    <div><span class="lab">
+            Поиск данных о врачах больницы
+        </span></div>
+</div>
+<div class="divbutton">
+
+    <span class="db">Введите Фамилию</span><br>
+    <input type="text" value=""
+           id="inputString" onkeyup="lookup(this.value);" onblur="fill();" /><br>
+
+
+    <div class="info">
+        <div class="suggestionsBox" id="suggestions" style="display: none;">
+            <div class="suggestionList" id="autoSuggestionsList">
+            </div>
+        </div>
+    <span class="db">Фамилия:</span><span id="surname"></span><br>
+    <span class="db">Имя:</span><span id="name"></span><br>
+    <span class="db">Отчество:</span><span id="patronymic"></span><br>
+    <span class="db">Специализация:</span><span id="spec"></span><br>
+    <span class="db">Рабочее время:</span><span id="worktime"></span><br>
+    </div>
+</div>
+
+<div class="en">
+    <span> Время сеанса:</span>
+    <span id="min"> </span>
+    <span> м. </span>
+    <span id= "sec"> </span>
+    <span> с.</span>
+    <script>
+    var sec = 0;
+    var min = 0;
+    document.getElementById("sec").innerHTML = sec;
+    document.getElementById("min").innerHTML = min;
+    setInterval(function(){
+    sec++;
+    if (sec==60){
+        sec = 0;
+        min++;
+    }
+    document.getElementById("sec").innerHTML = sec;
+        document.getElementById("min").innerHTML = min;
+    }, 1000);
+
+</script>
+</div>
+
+</body>
+</html>
