@@ -2,6 +2,6 @@
 $host = "localhost";
 $database = "hospitals";
 $user = "root";
-$password = "";
+$password = "root";
 
 ?>
