@@ -2,19 +2,19 @@ $( document ).ready(function() {
 
     $("#btntab").click(
         function(){
-                sendAjaxForm('result_form', 'ajax_form', "../vision/table_vision.php");
+                sendAjaxForm('result_form', 'ajax_form', 'table_vision.php');
             return false;
         }
     );
     $("#btnchart").click(
         function(){
-            sendAjaxForm('result_form', 'ajax_form', '../vision/chart_vision.php');
+            sendAjaxForm('result_form', 'ajax_form', 'chart_vision.php');
             return false;
         }
     );
     $("#btncomment").click(
         function(){
-            sendAjaxForm('result_form', 'ajax_form', '../vision/comment_vision.php');
+            sendAjaxForm('result_form', 'ajax_form', 'comment_vision.php');
             return false;
         }
     );

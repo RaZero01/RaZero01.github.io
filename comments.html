@@ -2,14 +2,14 @@
 <html lang="ru">
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <style>
         li{
             margin-bottom: 20px;
         }
         #chart_div{width: 800px; margin: 0 auto; text-align: left;}
     </style>
-<title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <link href="css/vision1.css" type="text/css" rel="stylesheet">
     <script language="JavaScript" type="text/javascript"
@@ -34,15 +34,28 @@
     <li><a href="comments.html">Отзывы</a></li>
 
 </ul>
-<div class="title">
-    <div><span class="lab">
-            Таблица "Врачи"
-        </span></div>
-</div>
+
+
+<div class="title" >
+    <div><form action="php/comments.php" method="post">
+        <div style="text-align: center"><span class="db"  >
+            Пожалуйста, заполните форму</span></div>
+        <div><span class="db">
+            Name:<input name="name" placeholder="name"><br>
+            </span></div>
+        <div><span class="db">
+            Comment:<input name="comment" placeholder="comment"><br>
+            </span></div>
+        <div><span class="db">
+            Date:<input name="date" placeholder="date"><br>
+            </span></div>
+        <div style="text-align: center"><input type="submit" value="Добавить комментарий"></div>
+    </form></div></div>
+
 <div class="divbutton">
-    <form action="php/backup.php" method="POST">
+    <form action="php/backup_comment.php" method="POST">
         <input name="myActionName"
-                type="submit" value="Обновить данные" />
+               type="submit" value="Обновить данные" />
     </form>
     <form action="dataOut/excel.php" method="POST">
         <input name="myActionName"
@@ -57,7 +70,7 @@
                type="button" value="Табличное представление"/>
     </form>
     <form action="" method="POST">
-        <input id="btnchart"
+        <input id="btncomment"
                type="button" value="Графическое представление" />
     </form>
 </div>
