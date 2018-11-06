@@ -14,8 +14,8 @@ $query = "INSERT INTO comments VALUES ('$name','$comment',
 $result = mysqli_query($link,$query) or die("Ошибка ".
     mysqli_error($link));
 if($result){
-    echo "<script> alert('Данные успешно добавлены');</script>";
-    echo "<script> location.replace('../doctor.html');</script>";
+    echo "<script> alert('Ваш отзыв отправлен');</script>";
+    echo "<script> location.replace('../comments.html');</script>";
     mysqli_close($link);
     exit();
 }

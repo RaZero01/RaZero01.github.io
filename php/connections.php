@@ -1,7 +1,7 @@
 <?php
-$host = "ftpupload.net";
+$host = "localhost";
 $database = "hospitals";
-$user = "epiz_22953050";
-$password = "4BIgHW1lvM";
+$user = "root";
+$password = "root";
 
 ?>

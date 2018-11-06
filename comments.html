@@ -8,6 +8,22 @@
             margin-bottom: 20px;
         }
         #chart_div{width: 800px; margin: 0 auto; text-align: left;}
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            white-space: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-size: medium;
+            font-style: normal;
+            text-align: start;
+            font-variant: normal;
+            border-spacing: 2px;
+            -webkit-border-horizontal-spacing: 2px;
+            -webkit-border-vertical-spacing: 2px;
+        }
     </style>
     <title>Разинков Константин</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -24,6 +40,30 @@
         $('#opn-win').modal();
     }
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var file = {}
+        $.getJSON("php/backup_comments.json")
+            .success(function (data) {
+    file = data;
+        var tr;
+        for (var i = 0; i < file.length; i++) {
+            tr = $('<tr/>');
+            tr.append("<td>" + file[i].name + "</td>");
+            tr.append("<td>" + file[i].comment + "</td>");
+            tr.append("<td>" + file[i].date + "</td>");
+            $('table').append(tr);
+        }
+            })
+            .error(function (e) {
+                console.error(e)
+            })
+    });
+
+</script>
+
 <body class="body">
 <ul class="menu-main">
     <li><a href="index.html">Обратно</a></li>
@@ -49,7 +89,7 @@
         <div><span class="db">
             Date:<input name="date" placeholder="date"><br>
             </span></div>
-        <div style="text-align: center"><input type="submit" value="Добавить комментарий"></div>
+        <div style="text-align: center"><input type="submit" value="Добавить отзыв"></div>
     </form></div></div>
 
 <div class="divbutton">
@@ -57,25 +97,19 @@
         <input name="myActionName"
                type="submit" value="Обновить данные" />
     </form>
-    <form action="dataOut/excel.php" method="POST">
-        <input name="myActionName"
-               type="submit" value="Экспорт в Excel" />
-    </form>
-    <form action="dataOut/word.php" method="POST">
-        <input name="myActionName"
-               type="submit" value="Экспорт в Word" />
-    </form>
-    <form id="ajax_form" action="" method="post">
-        <input id="btntab"
-               type="button" value="Табличное представление"/>
-    </form>
-    <form id="" method="POST">
-        <input id="btncomment"
-               type="button" value="Графическое представление" />
-    </form>
 </div>
 
+<br>
+
 <div id="result_form" style="text-align: center">
+
+    <table border="1" class="table" align="center">
+        <tr>
+            <th>Имя</th>
+            <th>Отзыв</th>
+            <th>Дата</th>
+        </tr>
+    </table>
 
 </div>
 </body>
