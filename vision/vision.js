@@ -14,7 +14,7 @@ $( document ).ready(function() {
     );
     $("#btncomment").click(
         function(){
-            sendAjaxForm('result_form', 'ajax_form', '../vision/comment_vision.php');
+            sendAjaxForm('result_form', 'ajax_form', '../vision/table_vision.php');
             return false;
         }
     );
